@@ -1,0 +1,14 @@
+{
+  "preset": "ts-jest",
+  "testEnvironment": "node",
+  "roots": ["<rootDir>"],
+  "testMatch": ["**/__tests__/**/*.ts", "**/*.test.ts"],
+  "moduleNameMapper": {
+    "^@/(.*)$": "<rootDir>/$1"
+  },
+  "collectCoverageFrom": [
+    "services/**/*.ts",
+    "controllers/**/*.ts",
+    "!**/*.test.ts"
+  ]
+}

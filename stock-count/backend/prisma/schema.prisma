@@ -1,0 +1,71 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Employee {
+  id          String       @id @default(cuid())
+  name        String
+  email       String       @unique
+  password    String
+  role        String       @default("user")
+  stockCounts StockCount[]
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+}
+
+model Product {
+  id             String          @id @default(cuid())
+  code           String          @unique
+  name           String
+  unit           String          @default("UN")
+  productStocks  ProductStock[]
+  stockCountItems StockCountItem[]
+  createdAt      DateTime        @default(now())
+  updatedAt      DateTime        @updatedAt
+}
+
+model ProductStock {
+  id         String   @id @default(cuid())
+  product    Product  @relation(fields: [productId], references: [id])
+  productId  String
+  quantity   Float
+  location   String?
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@unique([productId])
+}
+
+model StockCount {
+  id          String   @id @default(cuid())
+  code        String   @unique
+  scheduledAt DateTime
+  status      String   @default("PENDENTE")
+  employee    Employee @relation(fields: [employeeId], references: [id])
+  employeeId  String
+  items       StockCountItem[]
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model StockCountItem {
+  id                String   @id @default(cuid())
+  stockCount        StockCount          @relation(fields: [stockCountId], references: [id])
+  stockCountId      String
+  product           Product             @relation(fields: [productId], references: [id])
+  productId         String
+  systemQuantity    Float
+  countedQuantity   Float?
+  status            String   @default("A_CONFERIR")
+  observacao        String?
+  createdAt         DateTime            @default(now())
+  updatedAt         DateTime            @updatedAt
+
+  @@unique([stockCountId, productId])
+}
+

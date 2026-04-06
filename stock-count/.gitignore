@@ -1,0 +1,76 @@
+# Node.js & npm
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Next.js
+.next/
+out/
+build/
+dist/
+
+# TypeScript
+*.tsbuildinfo
+tsconfig.tsbuildinfo
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+.env.production.local
+
+# Prisma
+prisma/dev.db
+prisma/dev.db-journal
+.prisma/
+
+# IDE & Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+.AppleDouble
+.LSOverride
+*.sublime-project
+*.sublime-workspace
+
+# OS
+Thumbs.db
+.Thumbs.db
+
+# Testing
+coverage/
+.nyc_output/
+jest-results.json
+
+# Build outputs
+dist/
+build/
+.turbo/
+
+# Cache
+.eslintcache
+.stylelintcache
+
+# Logs
+logs/
+*.log
+
+# Temporary files
+tmp/
+temp/
+
+# Frontend specific
+frontend/.next/
+frontend/out/
+frontend/public/next-sw.js*
+
+# Backend specific
+backend/dist/
+backend/.env.local
