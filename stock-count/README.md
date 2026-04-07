@@ -264,6 +264,53 @@ npm test:watch
 # Teste específico
 npm test -- auth.service.test
 ```
+Aqui vai um trecho pronto pra você **copiar e colar no seu README.md** na seção de *Deployment* 👇
+
+---
+
+## 🚀 Deployment
+
+A aplicação está disponível em produção com a seguinte arquitetura:
+
+### 🌐 Frontend
+
+* Hospedado na **Vercel**
+* Deploy automático a cada push na branch principal
+* URL: `https://stock-count-system-two.vercel.app`
+
+### ⚙️ Backend
+
+* Hospedado no **Render (plano free)**
+* URL base da API:
+  `https://stock-count-system.onrender.com/api/v1`
+
+### 🌿 Branch de Produção (Backend)
+
+* O backend em produção está configurado para usar a branch:
+
+  ```
+  render-back
+  ```
+* Essa branch contém:
+
+  * Configurações específicas para deploy no Render
+  * Ajustes de ambiente (CORS, variáveis, etc.)
+  * Build pronto para produção
+
+> ⚠️ **Importante:**
+> O plano gratuito do Render pode fazer o backend "dormir" após inatividade.
+> A primeira requisição pode levar alguns segundos para responder.
+
+---
+
+## 🔗 Integração Frontend ↔ Backend
+
+Certifique-se de que no frontend a variável de ambiente está configurada corretamente:
+
+```env
+NEXT_PUBLIC_API_URL=https://stock-count-system.onrender.com/api/v1
+```
+
 
 ### Testes Inclusos
 
