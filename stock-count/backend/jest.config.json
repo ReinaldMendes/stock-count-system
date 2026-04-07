@@ -10,5 +10,12 @@
     "services/**/*.ts",
     "controllers/**/*.ts",
     "!**/*.test.ts"
-  ]
+  ],
+  "globals": {
+    "ts-jest": {
+      "tsconfig": {
+        "types": ["jest", "node"]
+      }
+    }
+  }
 }
