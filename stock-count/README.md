@@ -646,9 +646,9 @@ export class NovoRepository {
 
 ## 📞 Contato & Suporte
 
-**Desenvolvido por**: Reinaldo Mendes  
-**Email**: contato@reinaldo.dev  
-**LinkedIn**: [linkedin.com/in/reinaldo](https://linkedin.com/in/reinaldo)  
+**Desenvolvido por**: Reinald Mendes  
+**Email**: reinaldmendes1215@gmail.com
+**LinkedIn**: [linkedin.com/in/reinald-mendes-b712b9182](https://linkedin.com/in/reinald-mendes-b712b9182)  
 **Data**: Abril 2026
 
 ---
